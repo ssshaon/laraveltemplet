@@ -19,3 +19,17 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('Admin.dashboard');
 });
+
+
+Route::get('/admin/user/create', function (){
+    return view('Admin.User.create');
+});
+
+
+
+Route::get('/admin/setting', function (){
+    return view('Admin.Setting.index');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
