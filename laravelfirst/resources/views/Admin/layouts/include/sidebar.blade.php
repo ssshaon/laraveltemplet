@@ -33,7 +33,7 @@
 
                     <!-- Main -->
                     <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
-                    <li class="active"><a href="{{url('/admin')}}" ><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+                    <li class="active"><a href="{{url('/admin')}}"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
 
                     <!-- /main -->
 
@@ -43,15 +43,17 @@
                     <li>
                         <a href="#"><i class="icon-users"></i> <span>Users</span></a>
                         <ul>
-                            <li class="@yield('user_add')"><a href="{{url('/admin/user/create')}}">Add New User</a></li>
+                            <li class="@yield('add_user')"><a href="{{url('/admin/user/create')}}">Add New User</a></li>
                             <li><a href="error_404.html">Active User</a></li>
                             <li><a href="error_405.html">All User</a></li>
+
                         </ul>
                     </li>
                     <li>
                         <a href="#"><i class="icon-user"></i> <span>Settings</span></a>
                         <ul>
-                            <li class="@yield('setting_user')"><a href="{{url('/admin/setting')}}">User Setting</a></li>
+                            <li class="@yield('user_seeting')"><a href="{{url('/admin/settings')}}">My Setting</a></li>
+
 
                         </ul>
                     </li>

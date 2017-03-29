@@ -1,7 +1,5 @@
-@extends('Admin.layouts.master')
-
-@section('user_add', 'active')
-
-@section('content')
-    {{'Sorry ALLAH. Sukria'}}
-    @endsection
+ @extends('Admin.layouts.master')
+ @section('add_user','active')
+ @section('content')
+     form goes here
+     @endsection

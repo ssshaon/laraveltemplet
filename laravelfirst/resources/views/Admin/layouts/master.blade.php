@@ -1,9 +1,8 @@
 @include('Admin.layouts.include.head')
-
 <body>
 
 <!-- Main navbar -->
- @include('Admin.layouts.include.mainnav')
+@include('Admin.layouts.include.mainnav')
 <!-- /main navbar -->
 
 
@@ -14,7 +13,7 @@
     <div class="page-content">
 
         <!-- Main sidebar -->
-       @include('Admin.layouts.include.sidebarmenu')
+       @include('Admin.layouts.include.sidebar')
         <!-- /main sidebar -->
 
 
@@ -23,14 +22,12 @@
 
             <!-- Page header -->
             <div class="page-header">
-                <div class="page-header-content">
-
-
-
-                </div>
 
                 <div class="breadcrumb-line">
-
+                    <ul class="breadcrumb">
+                        <li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
+                        <li class="active">Dashboard</li>
+                    </ul>
 
                     <ul class="breadcrumb-elements">
                         <li><a href="#"><i class="icon-comment-discussion position-left"></i> Support</a></li>
@@ -70,8 +67,9 @@
                             </div>
 
                             <div class="container-fluid">
-                                 @yield('content')
+                                @yield('content')
                             </div>
+
 
                         </div>
                         <!-- /traffic sources -->

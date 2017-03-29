@@ -15,19 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/admin', function () {
-    return view('Admin.dashboard');
+    return view('Admin.dashboar');
 });
 
-
-Route::get('/admin/user/create', function (){
+Route::get('/admin/user/create', function () {
     return view('Admin.User.create');
 });
 
-
-
-Route::get('/admin/setting', function (){
+Route::get('/admin/settings', function () {
     return view('Admin.Setting.index');
 });
 Auth::routes();
