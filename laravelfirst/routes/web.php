@@ -15,13 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
-    return view('Admin.dashboar');
-});
+Route::get('/admin',  'UserController@dashboard');
 
-Route::get('/admin/user/create', function () {
-    return view('Admin.User.create');
-});
+Route::get('/admin/user/create',  'UserController@create'
+ );
 
 Route::get('/admin/settings', function () {
     return view('Admin.Setting.index');
