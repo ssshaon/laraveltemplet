@@ -62,7 +62,7 @@
                         <!-- Traffic sources -->
                         <div class="panel panel-flat">
                             <div class="panel-heading">
-                                <h6 class="panel-title">Traffic sources</h6>
+                                <h6 class="panel-title">@yield('content_title')</h6>
 
                             </div>
 

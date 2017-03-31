@@ -204,7 +204,7 @@
             <li class="dropdown dropdown-user">
                 <a class="dropdown-toggle" data-toggle="dropdown">
                     <img src="assets/images/placeholder.jpg" alt="">
-                    <span>{{Auth::user()->name}}</span>
+                    <span>{{isset(Auth::user()->name) ? Auth::user()->name : ''}}</span>
                     <i class="caret"></i>
                 </a>
 

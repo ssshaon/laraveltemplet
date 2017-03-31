@@ -14,11 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/admin',  'UserController@dashboard');
 
-Route::get('/admin/user/create',  'UserController@create'
- );
+
 
 Route::get('/admin/settings', function () {
     return view('Admin.Setting.index');
@@ -26,3 +24,9 @@ Route::get('/admin/settings', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+//working on user module
+
+Route::get('/admin/user/create',  'UserController@create'
+);
+
+Route::post('/admin/user/store', 'UserController@store');

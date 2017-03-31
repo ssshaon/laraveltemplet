@@ -19,4 +19,7 @@ class UserController extends Controller
     public function create(){
         return view('Admin.User.create');
     }
+    public function store(){
+
+    }
 }

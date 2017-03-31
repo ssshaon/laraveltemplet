@@ -1,5 +1,10 @@
  @extends('Admin.layouts.master')
  @section('add_user','active')
+ @section('main_title','Add New User')
+
+ @section('content_title','Add New User')
  @section('content')
-     form goes here
+   {!! Form::open() !!}
+
+     {!! Form::close() !!}
      @endsection
