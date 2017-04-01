@@ -4,7 +4,20 @@
 
  @section('content_title','Add New User')
  @section('content')
-   {!! Form::open() !!}
+
+     @if(Session::has('message'))
+         <h2 class="btn btn-success">{{Session::get('message')}}</h2>
+         @endif
+   {!! Form::open(['url'=>'admin/user/store']) !!}
+
+   {!! Form::label('name','UserName') !!}
+   {!! Form::text('name',null,['placeholder'=>'something']) !!}
+   {!! Form::label('email','Email') !!}
+   {!! Form::email('email') !!}
+   {!! Form::label('password','Password') !!}
+   {!! Form::password('password') !!}
+
+   {!! Form::submit('Save') !!}
 
      {!! Form::close() !!}
      @endsection

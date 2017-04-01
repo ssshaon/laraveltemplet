@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -19,7 +21,12 @@ class UserController extends Controller
     public function create(){
         return view('Admin.User.create');
     }
-    public function store(){
+    public function store(Request $request){
+       $data=$request->except('password');
+       $data['password']=bcrypt($request->password);
+       User::create($data);
+       Session::flash('message','User Added Succesfully');
 
+       return redirect()->back();
     }
 }
