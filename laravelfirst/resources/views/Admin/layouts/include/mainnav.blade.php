@@ -214,7 +214,19 @@
                     <li><a href="#"><span class="badge bg-teal-400 pull-right">58</span> <i class="icon-comment-discussion"></i> Messages</a></li>
                     <li class="divider"></li>
                     <li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
-                    <li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+
+                        <li>
+                            <a href="{{ url('/logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+
                 </ul>
             </li>
         </ul>

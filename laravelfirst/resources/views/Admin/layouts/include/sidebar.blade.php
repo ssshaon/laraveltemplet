@@ -45,7 +45,7 @@
                         <ul>
                             <li class="@yield('add_user')"><a href="{{url('/admin/user/create')}}">Add New User</a></li>
                             <li><a href="error_404.html">Active User</a></li>
-                            <li><a href="error_405.html">All User</a></li>
+                            <li class="@yield('alluser_menu')"><a href="{{url('/admin/users')}}">All User</a></li>
 
                         </ul>
                     </li>

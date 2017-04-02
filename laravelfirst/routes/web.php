@@ -25,8 +25,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 //working on user module
-
-Route::get('/admin/user/create',  'UserController@create'
-);
+Route::get('/admin/users',  'UserController@index');
+Route::get('/admin/user/create',  'UserController@create');
 
 Route::post('/admin/user/store', 'UserController@store');
+Route::get('/admin/user/{id}/edit','UserController@edit');
+Route::post('/admin/user/{id}/update','UserController@update');
