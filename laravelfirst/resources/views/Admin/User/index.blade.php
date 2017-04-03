@@ -4,9 +4,6 @@
 
 @section('content_title','All User')
 @section('content')
-    @if(Session::has('message'))
-        <h2 class="btn btn-success">{{Session::get('message')}}</h2>
-    @endif
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
@@ -16,6 +13,10 @@
             </ul>
         </div>
     @endif
+    @if(Session::has('message'))
+        <h2 class="btn btn-success">{{Session::get('message')}}</h2>
+    @endif
+
 
     <table class="table table-bordered">
        <thead>

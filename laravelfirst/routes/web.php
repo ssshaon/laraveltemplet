@@ -25,10 +25,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 //working on user module
-Route::get('/admin/users',  'UserController@index');
-Route::get('/admin/user/create',  'UserController@create');
-
-Route::post('/admin/user/store', 'UserController@store');
-Route::get('/admin/user/{id}/edit','UserController@edit');
-Route::post('/admin/user/{id}/update','UserController@update');
-Route::post('/admin/user/{id}/delete','UserController@delete');
+//Route::get('/admin/users',  'UserController@index');
+//Route::get('/admin/user/create',  'UserController@create');
+//
+//Route::post('/admin/user/store', 'UserController@store');
+//Route::get('/admin/user/{id}/edit','UserController@edit');
+//Route::post('/admin/user/{id}/update','UserController@update');
+//Route::post('/admin/user/{id}/delete','UserController@delete');
+Route::resource('admin/users', 'UserController');
+Route::resource('admin/posts', 'Admin\\PostsController');

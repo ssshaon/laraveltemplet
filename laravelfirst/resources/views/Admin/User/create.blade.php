@@ -8,7 +8,7 @@
      @if(Session::has('message'))
          <h2 class="btn btn-success">{{Session::get('message')}}</h2>
          @endif
-   {!! Form::open(['url'=>'admin/user/store']) !!}
+   {!! Form::open(['url'=>'admin/users/store']) !!}
 
    {!! Form::label('name','UserName') !!}
    {!! Form::text('name',null,['placeholder'=>'something']) !!}
