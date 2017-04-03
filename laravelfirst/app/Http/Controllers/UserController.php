@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
+
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -29,6 +31,11 @@ class UserController extends Controller
     }
 
     public function store(Request $request){
+        $this->validate($request, [
+          'name'=>'required | unique',
+                'email'=>'required',
+            ]
+        );
        $data=$request->except('password');
        $data['password']=bcrypt($request->password);
        User::create($data);
@@ -48,5 +55,14 @@ class UserController extends Controller
         Session::flash('message','User Updated Succesfully');
 
         return redirect('/admin/users') ;
+    }
+    public function delete($id){
+        $data=User::find($id);
+        $data->delete();
+        Session::flash('message','User Deleted Succesfully');
+
+        return redirect('/admin/users') ;
+
+
     }
 }

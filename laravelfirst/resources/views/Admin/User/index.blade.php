@@ -7,7 +7,17 @@
     @if(Session::has('message'))
         <h2 class="btn btn-success">{{Session::get('message')}}</h2>
     @endif
-   <table class="table table-bordered">
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <table class="table table-bordered">
        <thead>
        <tr>
            <th>Id</th>
@@ -22,6 +32,13 @@
            <td>{{$user->name}}</td>
            <td>
                <a href="{{url('/admin/user',[$user->id, 'edit'])}}">Edit</a>
+
+               {!! Form::open([
+
+           'url' => ['/admin/user', $user->id,'delete']
+       ]) !!}
+               {!! Form::submit('Delete') !!}
+               {!! Form::close() !!}
            </td>
 
        </tr>
